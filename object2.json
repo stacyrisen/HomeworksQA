@@ -1,0 +1,96 @@
+{
+   "gin":[{
+      "title": "Bombay Sapphire",
+      "country": "Great Britain",
+      "strength": 47,
+      "price": 700
+   }, {
+      "title": "Hendricks",
+      "country": "Scotland", 
+      "strength": 41,
+      "price":1300
+   }, {
+      "title": "Tenjaku",
+      "country": "Japan",
+      "strength": 37,
+      "price": 625
+   }, {
+      "title": "Death's door",
+      "country": "USA",
+      "strength": 47,
+      "price": 2300
+   }],
+  "series": [{
+      "name":  "Upload",
+      "country": "USA",
+      "genre": "fiction",
+      "year": 2020
+  }, {
+      "name": "Breaking Bad",
+      "country": "USA",
+      "genre": "crime", 
+      "year": 2008
+  }, {
+      "name": "Silicon Valley",
+      "country": "USA",
+      "genre": "comedy",
+      "year": 2014
+  }, {
+      "name": 112263,
+      "country": "USA",
+      "genre": "thriller",
+      "year": 2016
+  }],
+  "perfume": [{
+      "brand": "YSL libre",
+      "sex":"woman",
+      "aroma": "floral",
+      "country": "France",
+      "price": 2290
+  }, {
+      "brand": "Versace Pour Homme",
+      "sex":"man",
+      "aroma": "fougere",
+      "country": "Italy",
+      "price": 618
+  }, {
+      "brand": "Escentric molecules 02",
+      "sex":"unisex",
+      "aroma": "floral",
+      "country": "Germany",
+      "price": 1837
+  }],
+   "tea": [{
+      "name": "matcha",
+      "country": "Japan",
+      "kind": "green",
+      "taste": "herbal"
+   }, {
+      "name": "puer",
+      "country": "China",
+      "kind": "green",
+      "taste": "tart"
+   }, {
+      "name": "rooibos",
+      "country": "Africa",
+      "kind": "red",
+      "taste": "sweet"
+   }],      
+  "pepper": [{
+      "kind": "Jalapeno",
+      "origin": "Mexico",
+      "scale": "8000 Scoville"
+   }, {
+      "kind": "Habanero",
+      "origin": "Amazonia",
+      "scale": "3500000 Scoville"
+   },{
+      "kind": "Dragon's Breath",
+      "origin": "England",
+      "scale": "48 million Scoville"
+   }, {
+      "kind": "Apache",
+      "origin": "Peru",
+      "scale": "100000 Scoville"
+   }]     
+}

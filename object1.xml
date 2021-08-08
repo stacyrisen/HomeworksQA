@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Object>
+  <gin>
+      <title>Bombay Sapphire</title>
+      <country>Great Britain</country>
+      <strength>47%</strength>
+      <price>700</price>
+  </gin>
+  <gin>
+      <title>Hendricks</title>
+      <country>Scotland</country>
+      <strength>41,4%</strength>
+      <price>1300</price>
+  </gin>
+  <gin>
+      <title>Tenjaku</title>
+      <country>Japan</country>
+      <strength>37,5%</strength>
+      <price>625</price>
+  </gin>
+  <gin>
+      <title>Death's door</title>
+      <country>USA</country>
+      <strength>47%</strength>
+      <price>2300</price>
+  </gin>
+  <series>
+        <name>Upload</name>
+        <country>USA</country>
+        <genre>fiction</genre>
+        <year>2020</year>
+  </series>
+  <series>
+        <name>Breaking Bad</name>
+        <country>USA</country>
+        <genre>crime</genre>
+        <year>2008</year>
+  </series>
+  <series>
+        <name>Silicon Valley</name>
+        <country>USA</country>
+        <genre>comedy</genre>
+        <year>2014</year>
+  </series>
+  <series>
+        <name>11.22.63</name>
+        <country>USA</country>
+        <genre>thriller</genre>
+        <year>2016</year>
+  </series>
+  <perfume>
+        <brand>YSL libre</brand>
+        <sex>woman</sex>
+        <aroma>floral</aroma>
+        <country>France</country>
+        <price>2290</price>
+  </perfume>
+  <perfume>
+        <brand>Versace Pour Homme</brand>
+        <sex>man</sex>
+        <aroma>fougere</aroma>
+        <country>Italy</country>
+        <price>618</price>
+  </perfume>
+  <perfume>
+        <brand>Escentric molecules 02</brand>
+        <sex>unisex</sex>
+        <aroma>floral</aroma>
+        <country>Germany</country>
+        <price>1837</price>
+  </perfume>
+    <tea>
+        <name>matcha</name>
+        <country>Japan</country>
+        <kind>green</kind>
+        <taste>herbal</taste>
+    </tea>
+  <tea>
+        <name>puer</name>
+        <country>China</country>
+        <kind>green</kind>
+        <taste>tart</taste>
+    </tea>
+    <tea>
+        <name>rooibos</name>
+        <country>Africa</country>
+        <kind>red</kind>
+        <taste>sweet</taste>
+    </tea>
+  <pepper>
+         <kind>Jalapeno</kind>
+         <origin>Mexico</origin>
+         <scale>8000 Scoville</scale>
+  </pepper>
+  <pepper>
+         <kind>Habanero</kind>
+         <origin> Amazonia</origin>
+         <scale>3500000 Scoville</scale>
+  </pepper>
+  <pepper>
+         <kind>Dragon’s Breath</kind>
+         <origin>England</origin>
+         <scale>2,48 million Scoville</scale>
+  </pepper>
+  <pepper>
+         <kind>Apache</kind>
+         <origin>Peru</origin>
+         <scale>100000 Scoville</scale>
+  </pepper>
+</Object>
+

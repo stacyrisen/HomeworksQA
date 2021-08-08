@@ -1,0 +1,27 @@
+title, country, strenght, price
+Bombey Sapphire, Great Britain, 47, 700
+Hendricks, Scotland, 41, 1300
+Tenjaku, Japan, 37, 625
+Death's door, USA, 47, 2300
+
+name, country, genre, year
+Upload, USA, fiction, 2020
+Breaking Bad, USA, crime, 2008
+Silicon Valley, USA, comedy, 2014
+112263, USA, thriller, 2016
+
+brand, sex, country, price
+YSL Libre, woman, France, 2290
+Versace Pour Homme, man, Italy, 618
+Escentric molecules 02, unisex, Germany, 1837
+
+name, country, kind, taste
+matcha, Japan, green, herbal
+puer, China, green, tart
+rooibos, Africa, red, sweet
+
+kind, origin, scale, color
+Jalapeno, Mexico, 8000 Scoville, green
+Habanero, Amazonia, 350000 Scoville, yellow
+Dragon's Breath, England, 48 million Scoville, red
+Apache, Peru, 100000 Scoville, red
