@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "08ed16c9-581d-49b5-b949-93c8fefbe79e",
+		"name": "ResearchTools",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreatAndDeleteTask",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 302\", function () {\r",
+									"    pm.response.to.have.status(302);\r",
+									"});\r",
+									"pm.test(\"Redirect location is correct\", function () {\r",
+									"   pm.response.to.have.header(\"Location\");\r",
+									"   pm.response.to.be.header(\"Location\", \"/\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{ENV_USERNAME}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{ENV_PASSWORD}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENV_ENDPOINT}}/signIn",
+							"host": [
+								"{{ENV_ENDPOINT}}"
+							],
+							"path": [
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatTask",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Is success\", function () {\r",
+									"    pm.expect(jsonData.success).to.eql(true);\r",
+									"    pm.expect(jsonData.error).to.eql(null);\r",
+									"    pm.collectionVariables.set(\"ENV_TASKNAME\", jsonData.task.Name);\r",
+									"    pm.collectionVariables.set(\"ENV_TASKDATA\", jsonData.task.Data);\r",
+									"    pm.collectionVariables.set(\"ENV_TASKID\", jsonData.task.id);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"Priority\": \"MEDIUM\",\r\n        \"Type\": \"CREATE\",\r\n        \"Name\": \"{{$guid}}\",\r\n        \"Data\": \"{{$guid}}.com\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ENV_ENDPOINT}}/tasks/create.json",
+							"host": [
+								"{{ENV_ENDPOINT}}"
+							],
+							"path": [
+								"tasks",
+								"create.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTasks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Task was created\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    let taskExists = false;\r",
+									"    for (let i = 0; i < jsonData.length; i++) {\r",
+									"        if (jsonData[i].id === pm.collectionVariables.get(\"ENV_TASKID\")) {\r",
+									"            taskExists = true;\r",
+									"        }\r",
+									"    }\r",
+									"    pm.expect(taskExists).to.eql(true);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENV_ENDPOINT}}/tasks/getAll.json",
+							"host": [
+								"{{ENV_ENDPOINT}}"
+							],
+							"path": [
+								"tasks",
+								"getAll.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteTask",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Is success\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.success).to.eql(true);\r",
+									"    pm.expect(jsonData.error).to.eql(null);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"{{ENV_TASKID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ENV_ENDPOINT}}/tasks/delete.json",
+							"host": [
+								"{{ENV_ENDPOINT}}"
+							],
+							"path": [
+								"tasks",
+								"delete.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTaskDelete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Task was delete\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    let taskExists = true;\r",
+									"    for (let i = 0; i < jsonData.length; i++) {\r",
+									"        if (jsonData[i].id === pm.collectionVariables.get(\"ENV_TASKID\")) {\r",
+									"            taskExists = false;\r",
+									"        }\r",
+									"    }\r",
+									"    pm.expect(taskExists).to.eql(true);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENV_ENDPOINT}}/tasks/getAll.json",
+							"host": [
+								"{{ENV_ENDPOINT}}"
+							],
+							"path": [
+								"tasks",
+								"getAll.json"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ENV_TASKNAME",
+			"value": ""
+		},
+		{
+			"key": "ENV_TASKDATA",
+			"value": ""
+		},
+		{
+			"key": "ENV_TASKID",
+			"value": ""
+		}
+	]
+}
